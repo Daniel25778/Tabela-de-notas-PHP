@@ -42,6 +42,11 @@ h1 {
     align-items: center;
 }
 
+table tr:hover {
+    cursor: pointer;
+    background-color: rgb(58, 55, 55);
+}
+
 table {
     width: 100%;
     text-align: left;
@@ -57,4 +62,21 @@ table td,
 th {
     border: 1px solid white;
     padding: 10PX;
+}
+
+.container-form-nota {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.527);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-form-nota form {
+    background-color: white;
+    box-shadow: 1px 5px 2px rgba(0, 0, 0, 0.521);
+    padding: 20px;
+    border-radius: 10px;
 }

@@ -41,7 +41,6 @@ function alterarNotaAluno(array &$turma, $novaNota, $nome ){
 
 }
 
-alterarNotaAluno($alunos, 20, "Mateus" );
 
 function situacaoAlunos(array &$turma){
     foreach($turma as $chave => $aluno ){

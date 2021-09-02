@@ -5,9 +5,27 @@
 require("./alunos.php");
 require("./funcoes-alunos.php");
 
+//criar a função(trazer do exercicio)
+//verificar se nova nota esta setada
+//se sim receber os dados via $_GET
+//Chamar a função de alterar nota
+
+
+if(isset($_GET["novaNota"])){
+  $nome = $_GET["nomeAluno"];
+  $nota = $_GET["novaNota"]; 
+  alterarNotaAluno($alunos, $nota, $nome); 
+}
+
+situacaoAlunos($alunos)
+
 
 
 ?>
+
+
+       
+
 
 
 
@@ -18,6 +36,7 @@ require("./funcoes-alunos.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
     <title>Notas dos Alunos </title>
 </head>
 <body>
@@ -34,8 +53,8 @@ require("./funcoes-alunos.php");
         <?php
         foreach($alunos as $aluno ){
           ?> 
-            <tr>
-                <th><?= $aluno["nome"] ?></th>
+            <tr onclick="showFormNota('<?= $aluno['nome']?>')">
+                <td><?= $aluno["nome"] ?></th>
                 <td><?=  $aluno["nota"]?></td>
                 <td><?=  $aluno["idade"] ?></td>
                 <?php
@@ -57,5 +76,13 @@ require("./funcoes-alunos.php");
         
     </table> 
     </section>
+    <div class="container-form-nota">
+      <form>
+        <input type="number" name="novaNota" placeholder="Digite a nova nota">
+        <input type="hidden" id="nomeAluno" name="nomeAluno">
+        <button>Alterar</button>
+      </form>
+
+    </div>
 </body>
 </html>
